@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+<html>
+  <head>
+    <title>GitHub API for Java - </title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/1024px.css");
+      @import url("./css/site.css");
+    </style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      </head>
+  <body>
+    <div id="wrap2"><div id="wrap">
+    <div id="header">
+      <p id="toplinks">Skip to: <a href="#content">Content</a> | <a href="#sidebar">Navigation</a> | <a href="#footer">Footer</a></p>
+		
+            <h1 id="bannerLeft">
+          <a href="">
+    
+            JUnit standalone runner
+    
+            </a>
+        </h1>
+                
+      <p id="slogan">The CloudBees OSS Parent Project</p>
+    </div>
+    <div id="breadcrumbs">
+      <div class="xright">  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+
+    <div id="sidebar">
+      <div id="navcolumn">
+              <h2>
+          JUnit standalone runner
+        </h2><ul>
+              
+    <li class="none">
+              <strong>Introduction</strong>
+        </li>
+              
+    <li class="none">
+              <a href="http://mvnrepository.com/artifact/com.cloudbees/junit-standalone-runner">Download</a>
+        </li>
+              
+    <li class="none">
+              <a href="https://github.com/cloudbees/junit-standalone-runner">Source code</a>
+        </li>
+          </ul>
+      <h2>
+          References
+        </h2><ul>
+              
+    <li class="none">
+              <a href="apidocs/index.html">Javadoc</a>
+        </li>
+          </ul>
+        </div>
+    </div>
+    <div id="content">
+      <div id="contentBox">
+        <h1>What is this?</h1>
+
+<p>This stand-alone program runs your compiled JUnit4 test cases and generate JUnit report files.
+It contains everything you need to run the tests.
+With this driver, you can build and package test code, then run it elsewhere later as a binary with
+minimum dependency.</p>
+
+<p>This project was originally developed for running <a href="http://incubator.apache.org/bigtop/">Apache BigTop tests</a>.
+These are integration tests that need to run on arbitrary target systems. In such environment, it is better
+not to expect the presence of Ant/Maven in the test target, and it is better to take the test as a binary artifact
+so as not to requier JDK on the target system.</p>
+
+<h1>Usage</h1>
+
+<p>Package your test code into a jar file (or jar files), and place them all into a single directory along
+with all your dependencies. Then run the tool as follows:</p>
+
+<pre><code>java -jar junit-standalone-runner-1.0-jar-with-dependencies.jar -report path/to/report path/to/jardir
+</code></pre>
+
+<p>The program will scan all your classes for the <code>@Test</code> annotation, then run them all. Report files
+are created and stored into the specified directory in the XML format.</p>
+
+      </div>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2011-2012
+    
+          <a href="http://kohsuke.org/">Kohsuke Kawaguchi</a> and other contributors
+          
+  
+
+  
+  
+  &nbsp;| Last Published: 03/16/2012
+  &nbsp;| Version: 1.0-SNAPSHOT
+</div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    </div></div>
+  </body>
+</html>
