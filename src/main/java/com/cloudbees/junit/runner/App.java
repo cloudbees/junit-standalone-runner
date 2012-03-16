@@ -136,9 +136,9 @@ public class App
             });
         }
         List<File> jars = findJars();
-        System.out.println("Found "+jars.size()+" jar(s)");
+        System.out.println("Found "+jars.size()+" jars");
         List<Class> tests = scanTestClasses(jars);
-        System.out.println("Found "+tests.size()+" test(s)");
+        System.out.println("Found "+tests.size()+" test classes");
 
         return junit.run(new Computer(), tests.toArray(new Class[0])).getFailureCount();
     }
