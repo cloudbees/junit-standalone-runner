@@ -44,6 +44,11 @@
             <phase>package</phase>
             <configuration>
               <descriptorId>jar-with-dependencies</descriptorId>
+              <archive>
+                <manifest>
+                  <mainClass>com.cloudbees.junit.runner.App</mainClass>
+                </manifest>
+              </archive>
             </configuration>
           </execution>
         </executions>

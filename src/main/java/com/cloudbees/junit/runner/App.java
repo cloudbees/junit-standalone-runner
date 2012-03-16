@@ -62,7 +62,10 @@ public class App
             return -1;
         }
     }
-    
+
+    /**
+     * Recursively scans the specified directories and find all the jar files.
+     */
     protected List<File> findJars() {
         List<File> jars = new ArrayList<File>();
         for (File dir : directories) {
@@ -80,7 +83,10 @@ public class App
                 jars.add(dirOrJar);
         }
     }
-    
+
+    /**
+     * Crack open all the jar files, and list up all the classes that have JUnit4 test annotations on them.
+     */
     protected List<Class> scanTestClasses(List<File> jars) throws IOException, ClassNotFoundException {
         URL[] urls = new URL[jars.size()];
         for (int i=0; i<urls.length; i++)
@@ -129,7 +135,12 @@ public class App
                 }
             });
         }
-        return junit.run(new Computer(), scanTestClasses(findJars()).toArray(new Class[0])).getFailureCount();
+        List<File> jars = findJars();
+        System.out.println("Found "+jars.size()+" jar(s)");
+        List<Class> tests = scanTestClasses(jars);
+        System.out.println("Found "+tests.size()+" test(s)");
+
+        return junit.run(new Computer(), tests.toArray(new Class[0])).getFailureCount();
     }
 
     /**
