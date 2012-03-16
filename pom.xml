@@ -20,6 +20,7 @@
     <groupId>com.cloudbees</groupId>
     <artifactId>cloudbees-oss-parent</artifactId>
     <version>1</version>
+    <relativePath />
   </parent>
 
   <artifactId>junit-standalone-runner</artifactId>
@@ -34,6 +35,17 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.doxia</groupId>
+            <artifactId>doxia-module-markdown</artifactId>
+            <version>1.1.4</version>
+          </dependency>
+        </dependencies>
+      </plugin>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <executions>
