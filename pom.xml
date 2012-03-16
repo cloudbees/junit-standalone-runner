@@ -54,6 +54,13 @@
         </executions>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+        <artifactId>wagon-gitsite</artifactId>
+        <version>0.3.1</version>
+      </extension>
+    </extensions>
   </build>
 
   <dependencies>
@@ -83,4 +90,18 @@
       <version>1.8.2</version>
     </dependency>
   </dependencies>
+
+  <distributionManagement>
+    <site>
+      <id>github-pages</id>
+      <url>gitsite:git@github.com/cloudbees/${project.artifactId}.git</url>
+    </site>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:git:git@github.com/cloudbees/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/cloudbees/${project.artifactId}.git</developerConnection>
+    <url>http://cloudbees.github.com/${project.artifactId}/</url>
+  </scm>
+
 </project>
